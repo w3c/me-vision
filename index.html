@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>A perspective on Media &amp; Entertainment for the Web</title>
+    <script src="https://www.w3.org/Tools/respec/respec-w3c-common" class='remove'></script>
+    <script class='remove'>
+      var respecConfig = {
+        specStatus: "unofficial",
+        editors: [{
+          name: "François Daoust",
+          url: "https://www.w3.org/People/#fd",
+        }],
+        github: "https://github.com/tidoust/me-vision",
+        shortName: "me-vision",
+        localBiblio: {
+          EVERGREEN: {
+            title: "The evergreen Web",
+            href: "https://www.w3.org/2001/tag/doc/evergreen-web/",
+            date: "09 February 2017",
+            status: "TAG Finding",
+            authors: [
+              "Hadley Beeman"
+            ]
+          },
+          WEBMEDIAAPI: {
+            title: "Web Media API Snapshot 2017",
+            href: "https://www.w3.org/2017/12/webmediaapi.html",
+            date: "15 May 2018",
+            status: "Final Community Group Report",
+            authors: [
+              "David Evans",
+              "Mark Vickers"
+            ]
+          },
+          CMAF: {
+            title: "ISO/IEC CD 23000-19 Common Media Application Format",
+            href: "https://mpeg.chiariglione.org/sites/default/files/files/standards/parts/docs/w16186.zip",
+            date: "24 June 2016",
+            publisher: "ISO/IEC",
+            authors: [
+              "Kilroy Hughes",
+              "David Singer"
+            ]
+          },
+          CENC: {
+            title: "ISO/IEC 23001-7:2015, Information technology — MPEG systems technologies — Part 7: Common encryption in ISO Base Media File Format files - 2nd Edition",
+            href: "https://www.iso.org/obp/ui/#iso:std:iso-iec:23001:-7:ed-2:v1",
+            status: "International Standard",
+            publisher: "ISO/IEC"
+          },
+          WebXR: {
+            title: "WebXR Device API",
+            href: "https://immersive-web.github.io/webxr/",
+            date: "20 August 2018",
+            status: "Editor's Draft",
+            authors: [
+              "Brandon Jones",
+              "Nell Waliczek"
+            ]
+          },
+          AV1: {
+            title: "AV1 Bitstream & Decoding Process Specification",
+            href: "https://github.com/AOMediaCodec/av1-spec/releases/download/v1.0.0/av1-spec-v1.0.0.pdf",
+            date: "25 June 2018",
+            authors: [
+              "Peter de Rivaz",
+              "Jack Haughton"
+            ]
+          }
+        }
+      };
+    </script>
+  </head>
+  <body>
+
+    <section id='abstract'>
+      <p>This document provides an analysis of the Media &amp; Entertainment Industry in relationship with the Web, and identifies shorter- and longer-term trends that could influence Web technologies.</p>
+    </section>
+
+    <section id='sotd'>
+      <p>This document is a subjective attempt by the author to understand and describe the Media &amp; Entertainment sector, and trigger discussions around standardization topics at W3C.</p>
+    </section>
+
+    <section>
+      <h2>Introduction</h2>
+      <p>On the Web, HTML5 [[HTML]], Media Source Extensions [[media-source]], Encrypted Media Extensions [[encrypted-media]], and captioning languages WebVTT [[WEBVTT]] and Timed Text Markup Language [[ttml1]] provide the building blocks that enable <a>continuous media</a> scenarios. These technologies, deployed in main Web browsers today, are used daily to stream content across the globe. Other technologies have been or are being developed to enable other types of <a>continuous experiences</a> such as games.</p>
+      <p>The goal of this document is to review on-going trends in the <a>Media &amp; Entertainment</a> sector, with a view to identifying technology needs that could lead to the standardization of new Web technologies on the Web, and/or to revisions of existing ones.</p>
+    </section>
+
+    <section>
+      <h2>Terminology</h2>
+      <p>In this document, the term <dfn>Media &amp; Entertainment</dfn> describes the part of the industry that makes business entertaining people through <a>continuous experiences</a>.</p>
+
+      <p>The term <dfn>continuous experiences</dfn> refers to applications that somehow constrain the user to some consumption/interaction rhythm. In other words, <a>continuous experiences</a> feature immersive content that captures the user's attention and that has an <a>internal timeline</a>. Experiences based on <a>continuous media</a> are obvious examples of <a>continuous experiences</a>, but note the definition goes beyond and also encompasses <a>interactive content</a> where the user's behavior influences the progression along the <a>internal timeline</a>, such as Virtual Reality (VR) experiences and games.</p>
+
+      <p>For a given content, the term <dfn>timeline</dfn> describes a mapping from time to positions in that content. When content is <a>continuous media</a>, the <a>timeline</a> is the <a data-cite="HTML#media-timeline">media timeline</a>. This document considers other types of content, where the notion of position may be more abstract. For instance, the notion of position in games may be the cumulated history of moves and events that happened since the game started. Content is said to have an <dfn>internal timeline</dfn> if it has a <a>timeline</a> that is a continuous function of time, meaning when progress along the <a>timeline</a> is not purely triggered by user interaction but also changes on its own in absence of it.</p>
+
+      <p>The term <dfn>continuous media</dfn> is used as defined in the <a href="https://www.w3.org/2017/03/webtv-charter.html#scope">W3C Media &amp; Entertainment Interest Group Charter</a> to mean videos, sound recordings, and their associated technologies such as timed text.</p>
+    </section>
+
+    <section>
+      <h2>An overview of Media &amp; Entertainment</h2>      
+
+      <p>There are many ways to approach <a>Media &amp; Entertainment</a>. This section looks at the <a>media pipeline</a>, and at <a>categories of content</a> coupled with <a>content consumption mechanisms</a>. A quick look at money flows completes this overview.</p>
+
+      <section>
+        <h3>The media pipeline</h3>
+
+        <p>The <dfn>media pipeline</dfn> is defined as all the steps needed for a user to experience media content. These steps consist of: <a>pre-production</a>, <a>production</a>, <a>post-production</a>, <a>distribution</a>, and <a>rendering</a>. Each step can be further divided into sub-steps and concepts. Some of them are listed below. This document does not attempt to set precise boundaries and definitions for each of them:</p>
+        <ol>
+          <li><dfn>pre-production</dfn>: screenplay, storyboard, scheduling, etc.</li>
+          <li><dfn>production</dfn>: media capture, production studio, etc.</li>
+          <li><dfn>post-production</dfn>: audio/video mixing, audio encoding, captioning, telecine, special effects, content protection, etc.</li>
+          <li><dfn>distribution</dfn>: broadcasting, streaming, packaging, etc.</li>
+          <li><dfn>rendering</dfn>: theater, video player, XR headset, digital signage, etc.</li>
+        </ol>
+
+        <p>The process of creating media assets, also known as <dfn>content production</dfn>, consists of the first three steps of the <a>media pipeline</a> (<a>pre-production</a>, <a>production</a> and <a>post-production</a>).</p>
+      </section>
+
+      <section>
+        <h3>Media content</h3>
+
+        <p>Content produced by the <a>Media &amp; Entertainment</a> can be divided into three main <dfn>categories of content</dfn>:</p>
+        <ul>
+          <li><dfn>On-demand content</dfn>: <a>continuous media</a> that gets produced once in advance of viewing (i.e. not in real time). The production of <a>on-demand content</a> may take months or years and may cost up to a few hundreds of millions of dollars. The resulting content can be monetized over a long period of time and across distribution channels (movie theaters, TV, on-demand catalogs) and technologies (HD, HDR, UHD, 3D, etc.). The typical expectation is that <a>on-demand content</a> will be watched by a relatively small number of users at once, but that there will be many opportunities to watch the content, so that many users will have watched the content over time.</li>
+          <li><dfn>Live content</dfn>: <a>continuous media</a> that gets produced and distributed in real-time. <a>Live content</a> is strongly tied to a particular event that people want to follow together and at the same time, or for which knowing the outcome would kill the suspense. Examples include sporting events, music shows, news, shows that interact with the audience (e.g. radio shows). The typical expectation is that <a>live content</a> will be watched once by a large number of people.</li>
+          <li><dfn>Interactive content</dfn>: content for which progress along its <a>timeline</a> also depends on user's actions. This category typically includes games and XR experiences. Purely interactive content, in other words content that does not have an <a>internal timeline</a> such as data-based content that the user can explore (maps, science data, educational material in MOOCs, and <abbr title="Computer-Aided Design">CAD</abbr> applications used in industries for complex product design) is out of scope for this document.</li>
+        </ul>
+
+        <p>These three main <a>categories of content</a> rouhgly map to three main <dfn>content consumption mechanisms</dfn>:</p>
+        <ul>
+          <li><dfn>On-demand viewing</dfn>: The user browses a catalog, selects the <a>on-demand content</a> she wants to watch, and consumes the chosen content. The user has complete freedom over what she can watch when, but needs to choose.</li>
+          <li><dfn>Linear viewing</dfn>: The user selects a channel, and watches a linear stream composed of different programs. Historically, TV started with <a>live content</a> only, but it is worth noting that most programs are now <a>on-demand content</a> in practice. The main difference with <a>on-demand viewing</a> is that the timing is imposed: the user cannot choose to watch a particular content when she wants, but then she does not need to choose.</li>
+          <li><dfn>Immersive viewing</dfn>: The user starts an <a>interactive content</a> experience.</li>
+        </ul>
+
+        <p>This document will argue that there is a global trend towards convergence of these three main <a>content consumption mechanisms</a>.</p>
+      </section>
+
+      <section>
+        <h3>Business models</h3>
+
+        <p>Money-wise, content is king. From a high-level perspective, money in <a>Media &amp; Entertainment</a> is, by far, spent on <a>content production</a>. A single movie may cost hundreds of millions of dollars to produce. Dozens of millions of dollars can be spent on video games, and many other media productions cost millions of dollars. Most of these costs are incurred for <a>production</a> and <a>post-production</a>.</p>
+
+        <p>To a lesser extent, the industry also invests a good amount of money in <a>distribution</a> mechanisms, notably for the deployment of relevant network infrastructures such as Content Delivery Networks (<dfn data-lt="CDNs">CDN</dfn>), and of technologies that allow to encode high quality content with a minimal footprint.</p>
+
+        <p>Money gets made through:</p>
+        <ul>
+          <li><strong>Intermediary steps</strong>: Business-to-business contracts between parties while content progresses along the <a>media pipeline</a>, for instance when a <a>CDN</a> charges a content provider for distribution, or when a company specialized in post-processing charges a production company for its services.</li>
+          <li><strong>Content licensing</strong>: Business-to-business contracts between content providers and content distributors that allow distributors to stream some, or business-to-consumer grants of license for users to watch the content in a certain context. Licensing agreements can have all sorts of restrictions, including time and geo restrictions, restrictions on quality, legal captioning requirements, etc.</li>
+          <li><strong>Subscriptions</strong> from end users which can either be Subscription Video On Demand (<dfn>SVOD</dfn>) or Subscription-based Linear (<dfn>SLIN</dfn>).</li>
+          <li><strong>Ads</strong> rendered during media playback and/or product placement within the content produced.</li>
+          <li><strong>By-products</strong>, such as goodies associated with a movie, official championship gears for sport games, toys featured in a cartoon, etc.</li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <h2>Media &amp; Entertainment on the Web</h2>
+
+      <p>In the past few years, investments on the Web have focused on <strong>enabling distribution and rendering of media content</strong> within Web applications. This explains the creation of the <a data-cite="html#HTMLMediaElement"><code>HTMLMediaElement</code> interface</a> in HTML as well as the work on Media Source Extensions (MSE) [[media-source]] to enable adaptive streaming, on Encrypted Media Extensions (EME) [[encrypted-media]] to protect media assets that might have cost millions of dollars to produce, and on captioning languages Timed Text Markup Language (TTML) [[ttml1]] and WebVTT [[WEBVTT]]. With these technologies, the Web has become a major platform for the distribution and consumption of media content.</p>
+
+      <p>Focus has been on <a>on-demand viewing</a> until now, partly because of the rise of <a>SVOD</a>, praised by Web consumers used to selecting the content they browse, partly because on-demand distribution is easier to address technology-wise than live distribution, and partly because of legacy: the broadcasting industry predates the Web, adoption of new technologies and switch to other business models takes time when you already have an established business.</p>
+
+      <p>Media companies have also been looking at <strong>second screen scenarios</strong>. This matches W3C's second screen activity to develop the Presentation API [[presentation-api]] and Remote Playback API [[remote-playback]] specifications. The key here is to agree on an <a href="https://github.com/webscreens/openscreenprotocol/">open stack of protocols</a> to discover and control second screens. This is what the <a href="https://www.w3.org/community/webscreens">Second Screen Community Group</a> is working on. The main driving use case for this work is the ability to use one's smartphone to control and stream content to a large screen, possibly through an HDMI dongle. Other second screen scenarios, e.g. that start from broadcast content, are being investigated too.</p>
+
+      <p>Performance of web applications have also vastly improved over the years, and allow the creation of <strong>rich, complex and interactive applications</strong>. JavaScript runtimes have become much more efficient and workers allow background execution to some extent. That said, computation power available to Web applications remains constrained compared to native applications, with processing restricted to the CPU, and inter-thread communication mostly restricted to message-passing.</p>
+
+      <p>The <a>pre-production</a>, <a>production</a> and <a>post-production</a> phases of the <a>media pipeline</a>, which happen before <a>distribution</a> and <a>rendering</a>, have not been a priority for media companies at W3C so far. This is by no means surprising as W3C focuses on user agent technologies. Notable exceptions are TTML, which can be used, and is used, as an interchange format, and the work on peer-to-peer technologies [[WebRTC]] which, by definition, spans most steps of the <a>media pipeline</a>, from capture to rendering.</p>
+    </section>
+
+    <section>
+      <h2>Current trends</h2>
+
+      <p>The <a>Media &amp; Entertainment</a> industry seems to be pursuing a number of trends in parallel. Some of the trends below are more advanced and explicit than others.</p>
+
+      <section>
+        <h3>Reduce device fragmentation</h3>
+        <p>The <a>Media &amp; Entertainment</a> industry has embraced Web technologies as a way to generate <a>interactive content</a> along with <a>continuous media</a>, and user interfaces. Most Consumer Electronic (CE) devices such as TV displays, and set-top boxes, now embed Web browsers.</p>
+        <p>One problem is that the Web has now moved to an evergreen model [[EVERGREEN]]: technologies evolve daily and new versions of Web browsers are deployed every few weeks to regular computering devices such as laptops, tablets and smartphones.</p>
+        <p>However, the <a>Media &amp; Entertainment</a> industry needs more stability:</p>
+        <ul>
+          <li>CE devices are often low-margin products that are sold once and for all, and that may embed customized and specialized hardware. Device manufacturers need to minimize the costs of porting Web browser codebases to their devices, and may restrict updates to the firmware once a product has shipped to security fixes.</li>
+          <li>Content providers and distributors want to guarantee the user experience across devices. They need to understand what technologies they can recommend usage of to produce <a>interactive content</a>.</li>
+        </ul>
+        <p>The fragmentation that exists across devices currently impedes the generalization of scenarios that mixes <a>continuous media</a> and <a>interactive content</a>. The <a>Media &amp; Entertainment</a> industry has invested in various effort over the years to reduce that fragmentation and define interactive TV systems (e.g. <a href="https://www.atsc.org/">ATSC</a>, <a href="https://hbbtv.org/">HbbTV</a>, <a href="http://www.iptvforum.jp/en/hybridcast/specification.html">Hybridcast</a>). Work in the <a href="https://wwww.w3.org/community/webmediaapi">Web Media API Community Group</a> on a Web Media API specification [[WEBMEDIAAPI]], in collaboration with the CTA WAVE Project, is on-going to define a baseline of Web technologies supported across all CE devices and a test suite based on <a href="https://github.com/web-platform-tests/wpt">Web platform tests</a>, that can be used to certify compliant products.</p>
+      </section>
+
+      <section>
+        <h3>Improve content quality</h3>
+        <p>Encoding, processing, decoding, rendering, memory, storage, and network capabilities are all on the rise. They allow content providers to produce and distribute higher quality content, using techniques to extend the color space and improve content resolution, e.g. High Dynamic Range (HDR), wide-gamut, Ultra-High Definition (UHD) and 4K, to propose a theater-like experience. That trend affects both audio and video.</p>
+        <p>While some of these changes happen at lower levels than the application level, some warrant changes within existing Web technologies. Typically, support for a wider color space requires updates to CSS and canvas technologies to encode new colors, as well as new features to describe mapping levels when an application mixes e.g. media content in HDR with an interface that uses RGB.</p>
+      </section>
+
+      <section>
+        <h3>Move to IP</h3>
+        <p>The generic <dfn>move to IP</dfn>, started a few years ago, is still ongoing. It started with <a>distribution</a> but progressively affects <a>production</a> and <a>post-production</a> as well.</p>
+
+        <section>
+          <h4>Distribution over IP</h4>
+          <p>Unicast distribution over IP is progressively replacing traditional broadcast technologies. This trend is further accentuated by the fact that the bandwidth available for broadcasting is fading away as underlying radio frequencies get re-affected to 4G and 5G networks, while at the same time needs for bandwidth increase with improvements to the quality of content (e.g. UHD, HDR).</p>
+          <p><a>CDNs</a> have become an essential component of <a>distribution</a> as a result, with various past or on-going works on technologies that enable efficient distribution and storage of media content next to the user, and streaming of media content over fluctuating networks. This includes work on common formats such as Common Media Application Format [[CMAF]] and Common Encryption [[CENC]], as well as renewed work on Royalty-Free video codecs [[AV1]]. This also includes now widely used mechanisms to stream content efficient over HTTP, e.g. Dynamic Adaptive Streaming over HTTP [[MPEGDASH]] and Media Source Extensions [[MSE]].</p>
+          <p>The <a>Media &amp; Entertainment</a> industry explores other <a>distribution</a> mechanisms, including the use of peer-to-peer technologies to distribute media content or the use of multicast, with a view to further reducing bandwidth needs and distribution costs, as well as to address scaling issues and reduce the overall latency when distributing <a>live content</a> to millions of users at once.</p>
+          <p>Most of these activities target lower levels than the application level, and are therefore usually out of scope for W3C. However, most of them need to surface one way or the other to Web applications so that they can implement algorithms based on them. The Media Source Extensions [[MSE]] specification is an obvious example. As such, new requirements that may warrant work on new Web technologies or on new features for existing ones are likely to arise.</p>
+        </section>
+
+        <section>
+          <h4>Production over IP</h4>
+          <p>Hardware has become a commodity. The need to use specialized hardware to perform various <a>production</a> and <a>post-production</a> steps on media content is progressively disappearing, replaced by the need to use specialized software, which can run in the cloud (<abbr title="Software as a Service">SaaS</abbr> and <abbr title="Platform as a Service">Paas</abbr>).</p>
+          <p>This triggers work on software interfaces (typically REST-based interfaces) to interact with these services. e.g. the work on <a href="https://amwa-tv.github.io/nmos/">Networked Media Open Specifications</a> (NMOS) done in the <a href="https://amwa.tv/">Advanced Media Workflow Association</a> (AMWA).</p>
+          <p>This move may not create standardization needs at the application level, Web browsers being mostly used to create relatively simple user interfaces to drive these services. However, it seems worth noting that some companies are also exploring the use of Web browsers as an <strong>authoring platform for media content</strong>, which results in much more demanding requirements that are not yet fulfilled in today's Web browsers, such as the ability to seek a video frame by frame.</p>
+        </section>
+      </section>
+
+      <section>
+        <h3>Personalize content</h3>
+        <p>While <a>on-demand viewing</a> is often opposed to <a>linear viewing</a>, it seems interesting to note that there is an on-going convergence between these two types of <a>content consumption mechanisms</a>:</p>
+        <ul>
+          <li>On-demand platforms have progressively switched to a more linear model where the user selects the first media content that she wants to watch and where the platform creates a program based on it and possibly based on user's expressed preferences and history. This allows these platforms to keep the user engaged.</li>
+          <li>Linear content providers are exploring ways to customize content, for instance using object-based modeling to create personalized news stories, or combining broadcast content with on-demand content to create personalized radio programs.</li>
+        </ul>
+        <p>Also, while there remains a clear difference between <a>on-demand content</a> and <a>live content</a>, monetization schemes for <a>on-demand content</a> can sometimes be quite close to those for <a>live content</a>, as the fear of missing out (FOMO) will lead users to watch newly available content as early as possible. Converserly, <a>live content</a>, especially for shows, may be <a>on-demand content</a> in disguise, and monetized as such, e.g. as a way to drive the audience for the next live show.</p>
+        <p>This convergence means that <a>Media &amp; Entertainment</a> companies are essentially trying to create a <strong>user specific linear viewing experience</strong>. Technology-wise, creating personalized content imposes requirements on the content itself, notably on its metadata, on mechanisms to measure and analyze the user's experience, and on mechanisms to create an uninterrupted stream of media content out of heterogeneous media assets.</p>
+        <p>Content costs money to produce and consumption on the Web is often ad-based. One of the focus areas for this trend is on <strong>improving ads efficiency</strong>, noting that the neverending fight between content providers and ad-blockers is detrimental to everyone. Audience measurement is also way too complex and still error-prone, resulting in ads being displayed &ldquo;for free&rdquo;. To improve ads efficiency, content distributors attempt to customize ads per user.</p>
+      </section>
+
+      <section>
+        <h3>Explore VR/AR and 360° videos scenarios</h3>
+        <p>In parallel to the previous trends, media companies are investigating Virtual Reality / Augmented Reality (VR/AR) scenarios, starting with 360° video programs. From a pure media perspective, this remains niche and a research space for now. For instance, as opposed to the trend to improve content quality (see <a href="#improve-content-quality"></a>), the push for VR and 360° videos does not really start with content aimed at movie theaters, where most of the money gets spent. That push clearly exists at the <a>production</a> phase though, where real actors, captured in 3D, perform more and more in front of a green background.</p>
+        <p>From an end-user perspective, the VR/AR push will more likely come from <a>interactive content</a>, as VR/AR devices create <a>immersive viewing</a> experiences by essence.</p>
+        <p>That said, VR/AR may take different forms. Immersive live experiences are being prototyped that e.g. allow users to experience a concert or a sporting event as though they were in the stadium. Additional requirements related to media content need to be fulfilled technology-wise to enable such scenarios.</p>
+      </section>
+    </section>
+
+    <section>
+      <h2>Next Big Thing</h2>
+      <p>Combining identified trends together makes it possible to sketch an ill-defined and hypothetical horizon for <a>Media &amp; Entertainment</a>. This exercise roughly goes under the name of <dfn data-lt="Next Big Things">Next Big Thing</dfn> in C-level circles. It should obviously be taken with a grain of salt:</p>
+      <ul>
+        <li>Trends happen in parallel, not sequentially.</li>
+        <li>Things tend to evolve over time, and start small. Some stay small, others grow. There will unlikely be a technology that revolutionizes the space in a snap. Still, technologies may disrupt existing businesses over time (the <a>move to IP</a> certainly disrupted the industry for instance).</li>
+      </ul>
+
+      <p>As far as <a>Media &amp; Entertainment</a> is concerned, the Web platform seems to be in-between <a>Next Big Things</a>. This appears more clearly when looking at trends from a technology perspective. With the exception of VR/AR, the trends mentioned above (see <a href="#current-trends"></a>) are evolutionary in nature: technologies that enable these trends already exist. As such, additional features that may still be required will appear as incremental improvements to well-deployed technologies. For instance, the incubation of a <a href="https://github.com/wicg/media-source/blob/codec-switching/codec-switching-explainer.md">codec switching feature for MSE</a> to enable seamless ad-insertion scenarios (see <a href="#personalize-content"></a>) is on-going when this document is written. In other words, the Web platform has already delivered on its <a>Next Big Thing</a> promise to become a major platform for <a>continuous media</a>.</p>
+
+      <p>This does not mean that the trends shoud be viewed as minor or as low-priority. Possibly small improvements may end up disrupting the entire <a>Media &amp; Entertainment</a> ecosystem. That said, these changes and disruptions would just confirm the predominent role that the Web platform has takend for the consumption of <a>continuous media</a>.</p>
+
+      <p>The convergence between <a>on-demand viewing</a> and <a>linear viewing</a> has already been pointed out (see <a href="#personalize-content"></a>). That convergence is triggered by a will to offer better user experiences and keep the user engaged. By definition, <a>immersive viewing</a> has the potential to create the most engaging experiences. Up until now, <a>immersive viewing</a> has remained largely on the side, though: <a>interactive content</a> follows different production paths, and the hypothetical immersion has been somewhat limited to keyboard/gamepad interactions over a rendering display. Innovations in that space have been restricted to high-end and native devices (e.g. game consoles). The availability of XR headsets and of ever-more natural interaction mechanisms (e.g. voice, gestures), the democratization of devices that can capture spatialized renderings of a live scene, general improvements to performances in all domains, and the power of the Web as a social and sharing platform, suggest that the Web platform will be at the heart of a <strong>convergence of the three main <a>content consumption mechanisms</a></strong> in the future.</p>
+
+      <p>The convergence between <a>continuous media</a> and <a>interactive content</a> is neither easy to achieve nor necessarily easy to conceptualize. In usual <a>interactive content</a>, the user is immersed in scenes that are generated on-the-fly. The user can navigate the scene freely because the generation is live. The situation is reversed with <a>continuous media</a> where content is assembled following the instructions of a director and where navigation is by definition limited. The suggested convergence would combine the two worlds to immerse the user into a world that features both directed scenes and freedom of navigation and interaction. This convergence would allow scenarios such as:</p>
+      <ul>
+        <li>Immersive live experiences where users get projected into the stadium to watch a sporting event, a music show, or to interact with actual players in a game show.</li>
+        <li>&ldquo;Choose your own adventure&rdquo; movies where user actions influence the scenario and outcome.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Requirements for the Web platform</h2>
+
+      <p>The identification of precise requirements to enable the convergence described in the previous section is out of scope for this document. High-level requirements include:</p>
+      <ul>
+        <li>Technologies that allow to capture and immerse the user in a virtual world. Work in that area has already started, e.g. the WebXR Device API [[WebXR]]. An Immersive Web Working Group may soon be created at W3C.</li>
+        <li>Technologies that allow real-time processing of media content on client devices, or close to the client. The <a href="https://www.w3.org/Community/gpu">GPU for the Web Community Group</a> may provide part of the solution. A worklet approach similar to the approch used in the Web Audio API [[Web audio]] may also be adopted in the WebRTC Working Group. On low-end devices, this process may have to be deported to the cloud (Web5G, cloud browser).</li>
+        <li>More generically, technologies that allow the production of content that adjusts to the user in real-time. This is likely going to require heavy computation on the client and high-speed low-latency networks. Work on WebAssembly [[wasm-core-1]] and possible upcoming standardization efforts around machine learning and Web5G should play a significant role.</li>
+        <li>Technologies that enable more natural interaction mechanisms, e.g. voice control and gestures.</li>
+        <li>Technologies that allow integration with the user's physical world to create more immersive experiences. This includes mechanisms to detect and extract users' surroundings such as floors, walls, ceilings and obstacles.</li>
+      </ul>
+    </section>
+  </body>
+</html>
