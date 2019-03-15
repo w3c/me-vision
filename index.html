@@ -19,15 +19,6 @@
         wgURI: "https://www.w3.org/2011/webtv/",
         charterDisclosureURI: "https://www.w3.org/2017/03/webtv-charter.html",
         localBiblio: {
-          EVERGREEN: {
-            title: "The evergreen Web",
-            href: "https://www.w3.org/2001/tag/doc/evergreen-web/",
-            date: "09 February 2017",
-            status: "TAG Finding",
-            authors: [
-              "Hadley Beeman"
-            ]
-          },
           WEBMEDIAAPI: {
             title: "Web Media API Snapshot 2018",
             href: "https://www.w3.org/2018/12/webmediaapi.html",
@@ -50,36 +41,10 @@
               "Jeff Burtolt"
             ]
           },
-          CMAF: {
-            title: "ISO/IEC CD 23000-19 Common Media Application Format",
-            href: "https://mpeg.chiariglione.org/sites/default/files/files/standards/parts/docs/w16186.zip",
-            date: "24 June 2016",
-            publisher: "ISO/IEC",
-            authors: [
-              "Kilroy Hughes",
-              "David Singer"
-            ]
-          },
-          CENC: {
-            title: "ISO/IEC 23001-7:2015, Information technology — MPEG systems technologies — Part 7: Common encryption in ISO Base Media File Format files - 2nd Edition",
-            href: "https://www.iso.org/obp/ui/#iso:std:iso-iec:23001:-7:ed-2:v1",
-            status: "International Standard",
-            publisher: "ISO/IEC"
-          },
-          WebXR: {
-            title: "WebXR Device API",
-            href: "https://www.w3.org/TR/webxr/",
-            date: "5 February 2019",
-            status: "First Public Working Draft",
-            authors: [
-              "Brandon Jones",
-              "Nell Waliczek"
-            ]
-          },
           AV1: {
             title: "AV1 Bitstream & Decoding Process Specification",
-            href: "https://github.com/AOMediaCodec/av1-spec/releases/download/v1.0.0/av1-spec-v1.0.0.pdf",
-            date: "25 June 2018",
+            href: "https://aomediacodec.github.io/av1-spec/av1-spec.pdf",
+            date: "08 January 2019",
             authors: [
               "Peter de Rivaz",
               "Jack Haughton"
@@ -202,7 +167,7 @@
       <section>
         <h3>Reduce device fragmentation</h3>
         <p>The <a>Media &amp; Entertainment</a> industry has embraced Web technologies as a way to generate <a>interactive content</a> along with <a>continuous media</a>, and user interfaces. All IP-connected and media-focused Consumer Electronic (CE) devices such as TV displays and set-top boxes now embed Web browsers.</p>
-        <p>One problem is that the Web has now moved to an evergreen model [[EVERGREEN]]: technologies evolve daily and new versions of Web browsers are deployed every few weeks to regular computering devices such as laptops, tablets and smartphones.</p>
+        <p>One problem is that the Web has now moved to an evergreen model [[EVERGREEN-WEB]]: technologies evolve daily and new versions of Web browsers are deployed every few weeks to regular computering devices such as laptops, tablets and smartphones.</p>
         <p>However, the <a>Media &amp; Entertainment</a> industry needs more stability:</p>
         <ul>
           <li>CE devices are often low-margin products whose software or firmware is rarely updated. Device manufacturers need to minimize the costs of porting Web browser codebases to their devices, and may typically restrict updates to the firmware once a product has shipped to security fixes.</li>
@@ -224,7 +189,7 @@
         <section>
           <h4>Distribution over IP</h4>
           <p>Unicast distribution over IP is progressively replacing traditional broadcast technologies. This trend is further accentuated by the fact that the bandwidth available for broadcasting is fading away as underlying radio frequencies get re-affected to 4G and 5G networks, while at the same time needs for bandwidth increase with improvements to the quality of content (e.g. UHD, HDR).</p>
-          <p><a>CDNs</a> have become an essential component of <a>distribution</a> as a result, with various past or on-going works on technologies that enable efficient distribution and storage of media content next to the user, and streaming of media content over fluctuating networks. This includes work on common formats such as Common Media Application Format [[CMAF]] and Common Encryption [[CENC]], as well as renewed work on Royalty-Free video codecs [[AV1]]. This also includes now widely used mechanisms to stream content efficient over HTTP, e.g. Dynamic Adaptive Streaming over HTTP [[MPEGDASH]] and Media Source Extensions [[MSE]].</p>
+          <p><a>CDNs</a> have become an essential component of <a>distribution</a> as a result, with various past or on-going works on technologies that enable efficient distribution and storage of media content next to the user, and streaming of media content over fluctuating networks. This includes work on common formats such as Common Media Application Format [[MPEGCMAF]] and Common Encryption [[MPEGCENC]], as well as renewed work on Royalty-Free video codecs [[AV1]]. This also includes now widely used mechanisms to stream content efficient over HTTP, e.g. Dynamic Adaptive Streaming over HTTP [[MPEGDASH]] and Media Source Extensions [[MSE]].</p>
           <p>The <a>Media &amp; Entertainment</a> industry is exploring other <a>distribution</a> mechanisms, including the use of peer-to-peer technologies to distribute media content or the use of multicast, with a view to further reducing bandwidth needs and distribution costs, as well as to address scaling issues and reduce the overall latency when distributing <a>live content</a> to millions of users at once.</p>
           <p>Most of these activities target lower levels than the application level, and are therefore usually out of scope for W3C. However, most of them need to surface one way or the other to Web applications so that they can implement algorithms based on them. The Media Source Extensions [[MSE]] specification is an obvious example. As such, new requirements that may warrant work on new Web technologies or on new features for existing ones are likely to arise.</p>
         </section>
