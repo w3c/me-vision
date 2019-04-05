@@ -121,26 +121,6 @@
 
         <p>This document will argue that there is a global trend towards convergence of these three main <a>content consumption mechanisms</a>.</p>
       </section>
-
-      <section>
-        <h3>Business models</h3>
-
-        <p class="issue">Is describing main money flows a good way to present the industry? Should the document rather (or also) present the different actors (content producers, broadcasters, CDNs, solution providers, device manufacturers, etc.) and e.g. present historical facts that explain regional aspects (public services, technology regulations, etc.)?</p>
-
-        <p>Money-wise, content is king. From a high-level perspective, most of the money spent in Media & Entertainment goes to <a>content production</a>. A single movie may cost hundreds of millions of dollars to produce. Dozens of millions of dollars can be spent on video games, and many other media productions cost millions of dollars. Most of these costs are incurred for <a>production</a> and <a>post-production</a>.</p>
-
-        <p>To a lesser extent, the industry also invests a good amount of money in <a>distribution</a> mechanisms, notably for the deployment of relevant network infrastructures such as Content Delivery Networks (<dfn data-lt="CDNs">CDN</dfn>), and of technologies that allow to encode high quality content with a minimal footprint.</p>
-
-        <p>Money gets made through:</p>
-        <ul>
-          <li><strong>Intermediary steps</strong>: Business-to-business contracts between parties while content progresses along the <a>media pipeline</a>, for instance when a <a>CDN</a> charges a content provider for distribution, or when a company specialized in post-processing charges a production company for its services.</li>
-          <li><strong>Content licensing</strong>: Business-to-business contracts between content providers and content distributors that allow distributors to stream some, or business-to-consumer grants of license for users to watch the content in a certain context. Licensing agreements can have all sorts of restrictions, including time and geo restrictions, restrictions on quality, legal captioning requirements, etc.</li>
-          <li><strong>Subscriptions</strong> from end users which can either be Subscription Video On Demand (<dfn>SVOD</dfn>) or Subscription-based Linear (<dfn>SLIN</dfn>).</li>
-          <li><strong>Ads</strong> rendered during media playback and/or product placement within the content produced.</li>
-          <li><strong>Taxes</strong> collected by national governments to fund public services such as public broadcasters.</li>
-          <li><strong>By-products</strong>, such as goodies associated with a movie, official championship gears for sport games, toys featured in a cartoon, etc.</li>
-        </ul>
-      </section>
     </section>
 
     <section>
@@ -148,7 +128,7 @@
 
       <p>In the past few years, investments on the Web have focused on <strong>enabling distribution and rendering of media content</strong> within Web applications. This explains the creation of the <a data-cite="html#HTMLMediaElement"><code>HTMLMediaElement</code> interface</a> in HTML as well as the work on Media Source Extensions (MSE) [[media-source]] to enable adaptive streaming, on Encrypted Media Extensions (EME) [[encrypted-media]] to protect media assets that might have cost millions of dollars to produce, and on captioning languages Timed Text Markup Language (TTML) [[ttml1]] and WebVTT [[WEBVTT]]. With these technologies, the Web has become a major platform for the distribution and consumption of media content.</p>
 
-      <p>Focus has been on <a>on-demand viewing</a> until now, partly because of the rise of <a>SVOD</a>, praised by Web consumers used to selecting the content they browse, partly because on-demand distribution is easier to address technology-wise than live distribution, and partly because of legacy: the broadcasting industry predates the Web, adoption of new technologies and switch to other business models takes time when you already have an established business.</p>
+      <p>Focus has been on <a>on-demand viewing</a> until now, partly because of the rise of Subscription Video On Demand (<dfn>SVOD</dfn>), praised by Web consumers used to selecting the content they browse, partly because on-demand distribution is easier to address technology-wise than live distribution, and partly because of legacy: the broadcasting industry predates the Web, adoption of new technologies and switch to other business models takes time when you already have an established business.</p>
 
       <p>Media companies have also been looking at <strong>second screen scenarios</strong>. This matches W3C's second screen activity to develop the Presentation API [[presentation-api]] and Remote Playback API [[remote-playback]] specifications. The key here is to agree on an <a href="https://github.com/webscreens/openscreenprotocol/">open stack of protocols</a> to discover and control second screens. This is what the <a href="https://www.w3.org/community/webscreens">Second Screen Community Group</a> is working on. The main driving use case for this work is the ability to use one's smartphone to control and stream content to a large screen, possibly through an HDMI dongle. Other second screen scenarios, e.g. that start from broadcast content, are being investigated too.</p>
 
@@ -189,7 +169,7 @@
         <section>
           <h4>Distribution over IP</h4>
           <p>Unicast distribution over IP is progressively replacing traditional broadcast technologies. This trend is further accentuated by the fact that the bandwidth available for broadcasting is fading away as underlying radio frequencies get re-affected to 4G and 5G networks, while at the same time needs for bandwidth increase with improvements to the quality of content (e.g. UHD, HDR).</p>
-          <p><a>CDNs</a> have become an essential component of <a>distribution</a> as a result, with various past or on-going works on technologies that enable efficient distribution and storage of media content next to the user, and streaming of media content over fluctuating networks. This includes work on common formats such as Common Media Application Format [[MPEGCMAF]] and Common Encryption [[MPEGCENC]], as well as renewed work on Royalty-Free video codecs [[AV1]]. This also includes now widely used mechanisms to stream content efficient over HTTP, e.g. Dynamic Adaptive Streaming over HTTP [[MPEGDASH]] and Media Source Extensions [[MSE]].</p>
+          <p>Content Delivery Networks (<dfn data-lt="CDNs">CDN</dfn>) have become an essential component of <a>distribution</a> as a result, with various past or on-going works on technologies that enable efficient distribution and storage of media content next to the user, and streaming of media content over fluctuating networks. This includes work on common formats such as Common Media Application Format [[MPEGCMAF]] and Common Encryption [[MPEGCENC]], as well as renewed work on Royalty-Free video codecs [[AV1]]. This also includes now widely used mechanisms to stream content efficient over HTTP, e.g. Dynamic Adaptive Streaming over HTTP [[MPEGDASH]] and Media Source Extensions [[MSE]].</p>
           <p>The <a>Media &amp; Entertainment</a> industry is exploring other <a>distribution</a> mechanisms, including the use of peer-to-peer technologies to distribute media content or the use of multicast, with a view to further reducing bandwidth needs and distribution costs, as well as to address scaling issues and reduce the overall latency when distributing <a>live content</a> to millions of users at once.</p>
           <p>Most of these activities target lower levels than the application level, and are therefore usually out of scope for W3C. However, most of them need to surface one way or the other to Web applications so that they can implement algorithms based on them. The Media Source Extensions [[MSE]] specification is an obvious example. As such, new requirements that may warrant work on new Web technologies or on new features for existing ones are likely to arise.</p>
         </section>
