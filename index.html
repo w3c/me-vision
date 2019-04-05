@@ -166,14 +166,17 @@
 
       <section>
         <h3>Reduce device fragmentation</h3>
-        <p>The <a>Media &amp; Entertainment</a> industry has embraced Web technologies as a way to generate <a>interactive content</a> along with <a>continuous media</a>, and user interfaces. All IP-connected and media-focused Consumer Electronic (CE) devices such as TV displays and set-top boxes now embed Web browsers.</p>
-        <p>One problem is that the Web has now moved to an evergreen model [[EVERGREEN-WEB]]: technologies evolve daily and new versions of Web browsers are deployed every few weeks to regular computering devices such as laptops, tablets and smartphones.</p>
-        <p>However, the <a>Media &amp; Entertainment</a> industry needs more stability:</p>
+        <p>The Web has moved to an <dfn>evergreen model</dfn> [[EVERGREEN-WEB]]: technologies evolve daily and new versions of main Web browsers are deployed every few weeks to regular computering devices such as laptops, tablets and smartphones.</p>
+        <p>The <a>Media &amp; Entertainment</a> industry has embraced Web technologies as a way to generate <a>interactive content</a> along with <a>continuous media</a>, and user interfaces. All IP-connected and media-focused Consumer Electronic (CE) devices such as TV displays and set-top boxes now embed Web browsers. These browsers may not support the same Web technologies as main browsers, or may not follow an <a>evergreen model</a>, for various reasons including:</p>
         <ul>
-          <li>CE devices are often low-margin products whose software or firmware is rarely updated. Device manufacturers need to minimize the costs of porting Web browser codebases to their devices, and may typically restrict updates to the firmware once a product has shipped to security fixes.</li>
-          <li>Content providers and distributors want to guarantee the user experience across devices. They need to understand what technologies they can recommend usage of to produce <a>interactive content</a>.</li>
+          <li>regional differences across standards, historically triggered by national or regional regulations;</li>
+          <li>the cost of porting Web technologies to specific and constrained hardware found in media-focused CE devices;</li>
+          <li>the cost of testing firmware updates across a wide range of hardware platforms;</li>
+          <li>the practical impossibility to update firmwares on hybrid CE devices when they are disconnected from the network.</li>
         </ul>
-        <p>The fragmentation that exists across devices currently impedes the generalization of scenarios that mixes <a>continuous media</a> and <a>interactive content</a>. The <a>Media &amp; Entertainment</a> industry has invested in various effort over the years to reduce that fragmentation and define interactive TV systems (e.g. <a href="https://www.atsc.org/">ATSC</a>, <a href="https://hbbtv.org/">HbbTV</a>, <a href="http://www.iptvforum.jp/en/hybridcast/specification.html">Hybridcast</a>). Work in the <a href="https://wwww.w3.org/community/webmediaapi">Web Media API Community Group</a> on a Web Media API specification [[WEBMEDIAAPI]], in collaboration with the CTA WAVE Project, is on-going to define a baseline of Web technologies supported across all CE devices and a test suite based on <a href="https://github.com/web-platform-tests/wpt">Web platform tests</a>, that can be used to certify compliant products.</p>
+        <p>The resulting device fragmentation impedes the generalization of scenarios that mix <a>continuous media</a> and <a>interactive content</a>. Content providers need to understand what technologies they can recommend usage of to produce <a>interactive content</a> to guarantee the user experience across devices.</p>
+        <p>The <a>Media &amp; Entertainment</a> industry has invested in various effort over the years to reduce that fragmentation and define interactive TV systems (e.g. <a href="https://www.atsc.org/">ATSC</a>, <a href="https://hbbtv.org/">HbbTV</a>, <a href="http://www.iptvforum.jp/en/hybridcast/specification.html">Hybridcast</a>).</p>
+        <p>The <a href="https://wwww.w3.org/community/webmediaapi">Web Media API Community Group</a>, in collaboration with the <a href="https://cta.tech/Research-Standards/Standards-Documents/WAVE-Project/WAVE-Project.aspx">CTA WAVE Project</a>, publishes annual snapshots of the Web Media API specification [[WEBMEDIAAPI]] which describes Web APIs that are available in main browser codebases at a given time, along with a test suite based on <a href="https://github.com/web-platform-tests/wpt">Web platform tests</a>, to bring CE device browsers to the same API support as main browsers.</p>
       </section>
 
       <section>
